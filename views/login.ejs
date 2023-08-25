@@ -11,6 +11,8 @@
       /* Center button on the screen */
       .center {
         display: flex;
+        flex-direction: column;
+        gap:2rem;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -28,6 +30,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 400px;
       }
       .google-btn:hover {
         background-color: #357ae8;
@@ -48,6 +51,7 @@
   </head>
   <body>
     <div class="center">
+      <div>
       <a href="/auth/google" class="google-btn">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -58,5 +62,30 @@
         <span>Login with Google</span>
       </a>
     </div>
+    <div>
+      <a href="/auth/facebook" class="google-btn">
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/meta-icon.png"
+          height="50px"
+          width="50px"
+          alt="meta logo"
+        />
+        <span>Login with Meta</span>
+      </a>
+    </div>
+    <div>
+      <a href="/auth/github" class="google-btn">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+          height="50px"
+          width="50px"
+          alt="Google logo"
+        />
+        <span>Login with github</span>
+      </a>
+    </div>
+    </div>
+
+
   </body>
 </html>

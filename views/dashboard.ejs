@@ -59,14 +59,20 @@
             class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4"
           >
             <div class="card">
-              <img
+              <% if (user.photos) { %>
+                <img
                 class="user-image"
                 src="<%= user.photos[0].value %>"
                 alt="User Image"
               />
+              <% } %>
+              
               <h3 class="user-name"><%= user.displayName %></h3>
-              <p class="user-email"><%= user.emails[0].value %></p>
 
+              <% if (user.emails) { %>
+                <p class="user-email"><%= user.emails[0].value %></p>
+              <% } %>
+              
               <a href="/logout" class="logout-button">Logout</a>
             </div>
           </div>
