@@ -1,91 +1,82 @@
 <html>
-  <head>
-    <title>Google Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* Center button on the screen */
-      .center {
-        display: flex;
-        flex-direction: column;
-        gap:2rem;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      /* Style the button */
-      .google-btn {
-        background-color: #ffffff;
-        color: grey;
-        padding: 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-family: "Roboto";
-        box-shadow: 0px 0px 10px #9e9e9e;
-        transition: all 0.3s ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 400px;
-      }
-      .google-btn:hover {
-        background-color: #357ae8;
-        cursor: pointer;
-        box-shadow: 0px 0px 20px #9e9e9e;
-        transform: scale(1.1);
-        color: white;
-      }
 
-      .google-btn img {
-        margin-right: 20px;
-      }
-      .google-btn span {
-        font-size: 30px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="center">
-      <div>
+<head>
+  <title>Google Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Center button on the screen */
+    .center {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Style the button */
+    .google-btn {
+      background-color: #ffffff;
+      color: grey;
+      padding: 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: "Roboto";
+      box-shadow: 0px 0px 10px #9e9e9e;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+    }
+
+    .google-btn:hover {
+      background-color: #357ae8;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px #9e9e9e;
+      transform: scale(1.1);
+      color: white;
+    }
+
+    .google-btn img {
+      margin-right: 20px;
+    }
+
+    .google-btn span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <div>
       <a href="/auth/google" class="google-btn">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-          height="50px"
-          width="50px"
-          alt="Google logo"
-        />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" height="50px"
+          width="50px" alt="Google logo" />
         <span>Login with Google</span>
       </a>
     </div>
     <div>
       <a href="/auth/facebook" class="google-btn">
-        <img
-          src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/meta-icon.png"
-          height="50px"
-          width="50px"
-          alt="meta logo"
-        />
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/meta-icon.png"
+          height="50px" width="50px" alt="meta logo" />
         <span>Login with Meta</span>
       </a>
     </div>
     <div>
       <a href="/auth/github" class="google-btn">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-          height="50px"
-          width="50px"
-          alt="Google logo"
-        />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" height="50px"
+          width="50px" alt="Github logo" />
         <span>Login with github</span>
       </a>
     </div>
-    </div>
+  </div>
 
 
-  </body>
+</body>
+
 </html>

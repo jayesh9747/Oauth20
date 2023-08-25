@@ -1,32 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport')
-const FacebookStrategy = require('passport-facebook').Strategy;
+const GithubStrategy = require('passport-github2').Strategy;
 const User = require('../models/user');
 const { logOut } = require('./control');
 
-passport.use(new FacebookStrategy({
-    clientID: process.env.FACEBOOK_CLIENT_ID,
-    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK_URL,
+passport.use(new GithubStrategy({
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.GITHUB_CALLBACK_URL,
 },
     async function (accessToken, refreshToken, profile, cb) {
         const user = await User.findOne({
             ProfileId: profile.id,
-            issuer: 'facebook',
+            issuer: 'Github',
         });
 
         if (!user) {
             const user = new User({
                 ProfileId: profile.id,
-                username: profile.displayName,
-                email: "jay",
+                username: profile.username,
+                email: profile.email ? profile.email : "",
                 issuer: profile.provider,
             });
             await user.save();
 
         } else {
-            console.log('Facebook User already exist in Db..')
+            console.log('Github User already exist in Db..')
         }
         return cb(null, profile);
     }
@@ -34,9 +34,9 @@ passport.use(new FacebookStrategy({
 ));
 
 
-router.get('/auth/facebook', passport.authenticate('facebook'))
+router.get('/auth/github', passport.authenticate('github'))
 
-router.get('/auth/facebook/callback', passport.authenticate('facebook', {
+router.get('/auth/github/callback', passport.authenticate('github', {
     failureRedirect: '/login',
 }), async (req, res) => {
     return res.redirect('/dashboard')
